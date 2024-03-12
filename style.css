@@ -24,6 +24,7 @@ li {
   left: 0;
   top: 0;
   width: 20rem;
+  display: none;
 }
 
 .accordion-button {
@@ -32,6 +33,12 @@ li {
 
 .content, img {
   display: none;
+}
+
+.default-image {
+  display: block;
+  position: absolute;
+  width: 28rem;
 }
 
 .accordions {

@@ -1,16 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Select all accordion buttons
-  const accordionButtons = document.querySelectorAll('.accordion > div > button');
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+  const defaultImage = document.querySelector('.default-image');
+
+  // Function to check if any accordion is open
+  function anyAccordionOpen() {
+    return Array.from(accordionButtons).some(button =>
+      button.nextElementSibling.classList.contains('visible')
+    );
+  }
 
   accordionButtons.forEach(button => {
-    button.addEventListener('click', function(event) {
-      const clickedButton = event.target;
-      const currentContent = clickedButton.nextElementSibling;
-      const currentImg = clickedButton.parentElement.previousElementSibling;
+    button.addEventListener('click', function() {
+      const currentContent = this.nextElementSibling;
+      const currentImg = this.parentElement.previousElementSibling;
+      
+      // Toggle visibility for the current accordion
+      currentContent.classList.toggle('visible');
+      currentImg.classList.toggle('visible');
+      currentContent.classList.toggle('hidden');
+      currentImg.classList.toggle('hidden');
 
-      // Close all other accordions by removing 'visible' class and adding 'hidden'
+      // Close all other accordions and hide their content and images
       accordionButtons.forEach(otherButton => {
-        if (otherButton !== clickedButton) {
+        if (otherButton !== this) {
           otherButton.nextElementSibling.classList.remove('visible');
           otherButton.nextElementSibling.classList.add('hidden');
           otherButton.parentElement.previousElementSibling.classList.remove('visible');
@@ -18,17 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Toggle the 'visible' class on the current accordion content and image
-      currentContent.classList.toggle('visible');
-      currentImg.classList.toggle('visible');
-
-      // Ensure that toggling also respects the hidden state
-      if(currentContent.classList.contains('visible')) {
-        currentContent.classList.remove('hidden');
-        currentImg.classList.remove('hidden');
+      // After toggling, check if any accordion is open
+      if (!anyAccordionOpen()) {
+        // If all accordions are closed, make the default image visible
+        defaultImage.classList.remove('hidden');
+        defaultImage.classList.add('visible');
       } else {
-        currentContent.classList.add('hidden');
-        currentImg.classList.add('hidden');
+        // If any accordion is open, ensure the default image is hidden
+        defaultImage.classList.add('hidden');
+        defaultImage.classList.remove('visible');
       }
     });
   });

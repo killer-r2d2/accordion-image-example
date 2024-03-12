@@ -1,44 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>accordion-image-example</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="main.js" defer></script>
-</head>
-<body>
-<section class="container">
-  <ul class="accordions">
-    <li>
-      <div class="accordion">
-        <img class="accordion-image" src="assets/tag1.svg" alt="placeholder">
-        <div class="button-content-container">
-          <button class="accordion-button">Accordion 1</button>
-          <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>accordion-image-example</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <section class="container">
+      <!-- if no accordion is open, show a default image -->
+      <div>
+        <img
+          class="default-image"
+          src="/assets/Gesamttour-3.svg"
+          alt="placeholder"
+        />
+        <ul class="accordions">
+          <li>
+            <div class="accordion">
+              <img
+                class="accordion-image"
+                src="assets/tag1.svg"
+                alt="placeholder"
+              />
+              <div class="button-content-container">
+                <button class="accordion-button">Accordion 1</button>
+                <p class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                  quam velit, vulputate eu pharetra nec, mattis ac neque.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="accordion">
+              <img
+                class="accordion-image"
+                src="assets/tag2.svg"
+                alt="placeholder"
+              />
+              <div class="button-content-container">
+                <button class="accordion-button">Accordion 2</button>
+                <p class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                  quam velit, vulputate eu pharetra nec, mattis ac neque.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="accordion">
+              <img
+                class="accordion-image"
+                src="assets/tag3.svg"
+                alt="placeholder"
+              />
+              <div class="button-content-container">
+                <button class="accordion-button">Accordion 3</button>
+                <p class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                  quam velit, vulputate eu pharetra nec, mattis ac neque.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
-    </li>
-    <li>
-      <div class="accordion">
-        <img class="accordion-image" src="assets/tag2.svg" alt="placeholder">
-        <div class="button-content-container">
-          <button class="accordion-button">Accordion 2</button>
-          <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="accordion">
-        <img class="accordion-image" src="assets/tag3.svg" alt="placeholder">
-        <div class="button-content-container">
-          <button class="accordion-button">Accordion 3</button>
-          <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
-        </div>
-      </div>
-    </li>
-  </ul>
-</section>
-  
-</body>
+    </section>
+  </body>
 </html>
