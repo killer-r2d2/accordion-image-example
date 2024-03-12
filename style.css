@@ -31,7 +31,7 @@ li {
   cursor: pointer;
 }
 
-.content, img {
+.content {
   display: none;
 }
 
